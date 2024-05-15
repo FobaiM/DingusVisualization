@@ -1,0 +1,117 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; /* Set the height to 100% of the viewport height */
+  background: url('background.png') no-repeat center center fixed;
+  background-size: 100% 100%; /* Fill the entire width and height without cropping */
+  background-position: center; /* Center the background image */
+  color: #fff;
+  font-family: 'Roboto', sans-serif;
+  overflow: hidden;
+  position: relative;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 20px; /* Adjust the gap between charts */
+    margin-top: 20px; /* Adjust margin top */
+}
+
+/* Position elements for each chart */
+#chart1 {
+  position: absolute;
+  top: 10px;
+  left: 20px;
+}
+
+#chart2 {
+  position: absolute;
+  top: 225px;
+  left: 20px;
+}
+
+#chart3 {
+  position: absolute;
+  top: 50%;
+  right: -2px;
+}
+
+#chart4 {
+  position: absolute;
+  top: 50%;
+  left: 20px;
+}
+
+#chart5 {
+  position: absolute;
+  top: 26%;
+  right: -4px;
+}
+
+#chart6 {
+  position: absolute;
+  top: 75%;
+  left: 20px;
+}
+
+#chart7 {
+  position: absolute;
+  top: 75%;
+  right: -2px;
+}
+
+.chart {
+  width: calc(50% - 20px); /* Set width dynamically to occupy 50% of container */
+  min-width: 300px; /* Set minimum width to maintain readability */
+  height: 205px;
+  padding: 1rem;
+  margin: 0.5rem;
+  border: 8px solid rgba(70, 131, 120, 1);
+  border-radius: 10px; /* Add unit to border-radius */
+  background: #000;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  overflow: hidden; /* Hide overflow to prevent pseudo-elements from protruding */
+  position: relative;
+}
+
+.chart::before {
+  bottom: 11%;
+  left: 7.4%;
+  width: 1.5px;
+  height: 77%;
+  transform: translateX(-50%);
+}
+
+.chart::after {
+  top: 89%;
+  left: 7.3%;
+  width: 90%; /* Adjust the width to control the length of the x-axis */
+  height: 1.5px;
+  transform: translateY(-50%);
+}
+
+.chart:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.8);
+}
+
+.chart.clicked {
+  transform: scale(2);
+  z-index: 2;
+}
+
+.chart canvas {
+    width: 100%; /* Make the canvas responsive within the chart container */
+    height: 100%;
+}

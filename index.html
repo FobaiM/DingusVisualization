@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-line-annotation"></script>
+    <script src="path/to/pixel-chart.js"></script>
+    <title>Real-time Computer Usage</title>
+</head>
+
+<!--Chart elements for each chart-->
+<body>
+    <div class="container">
+
+        <div class="chart" id="chart1">
+            <canvas id="cpuChart" width="610" height="300"></canvas>
+        </div>
+        <div class="chart" id="chart2">
+            <canvas id="ramChart" width="610" height="300"></canvas>
+        </div>
+        <div class="chart" id="chart3">
+            <canvas id="vramChart" width="610" height="300"></canvas>
+        </div>
+        <div class="chart" id="chart4">
+            <canvas id="historyCpuChart" width="610" height="300"></canvas>
+        </div>
+        <div class="chart" id="chart5">
+            <canvas id="historyVramChart" width="610" height="300"></canvas>
+        </div>
+        <div class="chart" id="chart6">
+            <canvas id="historyRamChart" width="610" height="300"></canvas>
+        </div>
+        <div class="chart" id="chart7">
+            <canvas id="jobsChart" width="610" height="300"></canvas>
+        </div>
+    </div>
+    <script src="./papaparse.min.js"></script>
+    
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.8.0/dist/chart.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+    <script src="chart1.js"></script>
+    <script src="chart2.js"></script>
+    <script src="chart3.js"></script>
+    <script src="chart4.js"></script>
+    <script src="chart5.js"></script>
+    <script src="chart6.js"></script>
+    <script src="chart7.js"></script>
+</body>
+
+</html>

@@ -16,23 +16,44 @@
 
 <!--Chart elements for each chart-->
 <body>
+    
     <div class="container">
 
-        <div class="chart" id="chart1">
+        <div class="waffle-chart1">
+            <div class="waffle-title">CPU</div><br>
+            <div class="waffle-title">Total Cores</div>
+            <div class="waffle-container" id="cpu-chart">
+                <!-- Squares will be generated here -->
+            </div>
+
+            
+        </div>
+        </div>
+
+        <div class="waffle-chart2">
+            <div class="waffle-title">RAM</div><br>
+            <div class="waffle-title">TB Total</div>
+            <div class="waffle-container" id="ram-chart">
+                <!-- Squares will be generated here -->
+            </div>
+        </div>
+
+
+        <!-- <div class="chart" id="chart1">
             <canvas id="cpuChart" width="610" height="300"></canvas>
         </div>
         <div class="chart" id="chart2">
             <canvas id="ramChart" width="610" height="300"></canvas>
-        </div>
+        </div> -->
         <div class="chart" id="chart3">
             <canvas id="vramChart" width="610" height="300"></canvas>
         </div>
         <div class="chart" id="chart4">
             <canvas id="historyCpuChart" width="610" height="300"></canvas>
         </div>
-        <div class="chart" id="chart5">
+        <!-- <div class="chart" id="chart5">
             <canvas id="historyVramChart" width="610" height="300"></canvas>
-        </div>
+        </div> -->
         <div class="chart" id="chart6">
             <canvas id="historyRamChart" width="610" height="300"></canvas>
         </div>
@@ -52,6 +73,7 @@
     <script src="chart5.js"></script>
     <script src="chart6.js"></script>
     <script src="chart7.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>

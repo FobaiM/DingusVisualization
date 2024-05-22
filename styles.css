@@ -1,57 +1,48 @@
 * {
   margin: 0;
-  padding: 0;
+  padding: 2px;
   box-sizing: border-box;
 }
 
 body {
   display: flex;
-  align-items: center;
   justify-content: center;
-  height: 100vh; /* Set the height to 100% of the viewport height */
+  align-items: center;
   background: url('background.png') no-repeat center center fixed;
   background-size: 100% 100%; /* Fill the entire width and height without cropping */
   background-position: center; /* Center the background image */
   color: #fff;
   font-family: 'Roboto', sans-serif;
-  overflow: hidden;
   position: relative;
 }
 
-.container {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    gap: 20px; /* Adjust the gap between charts */
-    margin-top: 20px; /* Adjust margin top */
-}
+  
 
 /* Position elements for each chart */
-#chart1 {
+/* #chart1 {
   position: absolute;
-  top: 30px;
+  top: 20px;
   left: 20px;
 }
 
 #chart2 {
   position: absolute;
   top: 225px;
-  left: 20px;
-}
+  left: 0px;
+} */
 
-#chart3 {
+/* #chart3 {
   position: absolute;
   top: 50%;
-  right: -2px;
+  left: 20px;
 }
 
 #chart4 {
   position: absolute;
   top: 50%;
-  left: 20px;
-}
-
+  left: -50px;
+} */
+/* 
 #chart5 {
   position: absolute;
   top: 26%;
@@ -68,21 +59,22 @@ body {
   position: absolute;
   top: 75%;
   right: -2px;
-}
+} */
 
 .chart {
-  width: calc(50% - 20px); /* Set width dynamically to occupy 50% of container */
+  width: 100%; /* Set width dynamically to occupy 50% of container */
   min-width: 300px; /* Set minimum width to maintain readability */
-  height: 205px;
-  padding: 3rem;
-  margin: 0.5rem;
-  border: 8px solid rgba(70, 131, 120, 1);
+  padding: 0.5rem;
+  margin-top: 10px;
+  border: 4px solid rgba(70, 131, 120, 1);
   border-radius: 10px; /* Add unit to border-radius */
   background: #000;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-  overflow: hidden; /* Hide overflow to prevent pseudo-elements from protruding */
-  position: relative;
+  display: inline-block;
+}
+
+#vramChart {
+  width: 50%;
+  height: 50%;
 }
 
 .chart::before {
@@ -112,67 +104,68 @@ body {
 }
 
 .chart canvas {
-    width: 100%; /* Make the canvas responsive within the chart container */
+    width: 100%; 
     height: 100%;
 }
 
-
-
-.waffle-chart1{
-  
-  /* width: calc(50% - 20px); Set width dynamically to occupy 50% of container */
-  min-width: 300px; /* Set minimum width to maintain readability */
-  height: 100%;
-  padding: 2rem;
-  margin: 0.5rem;
-  float: left;
-  border: 8px solid rgba(70, 131, 120, 1);
-  border-radius: 10px; /* Add unit to border-radius */
+/* styles.css */
+.chart2{
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background: #000;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-  overflow: hidden; /* Hide overflow to prevent pseudo-elements from protruding */
-  position: absolute;
-  top: 20px;
-}
-.waffle-chart2{
-  
-  /* width: calc(50% - 20px); Set width dynamically to occupy 50% of container */
-  min-width: 300px; /* Set minimum width to maintain readability */
-  height: 100%;
-  padding: 2rem;
-  margin: 0.5rem;
-  float: left;
-  border: 8px solid rgba(70, 131, 120, 1);
-  border-radius: 10px; /* Add unit to border-radius */
-  background: #000;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-  overflow: hidden; /* Hide overflow to prevent pseudo-elements from protruding */
-  position: absolute;
-  top: 400px;
+  margin-top: 5px;
 }
 
-.waffle-title {
-  font-size: 1.2em;
-  margin-bottom: 0px;
-}
-
-.waffle-container {
+#cpu-waffle-chart {
   display: grid;
-  grid-template-columns: repeat(40, 20px); /* 20 columns */
-  grid-template-rows: repeat(40, 20px);     /* 5 rows */
-  grid-gap: 2px;
+  grid-template-columns: repeat(37, 20px);
+  grid-template-rows: repeat(8, 20px);
+  gap: 2px;
+}
+#ram-waffle-chart {
+  display: grid;
+  grid-template-columns: repeat(37, 20px);
+  grid-template-rows: repeat(8, 20px);
+  gap: 2px;
 }
 
-.waffle-container .square {
+.square {
   width: 20px;
   height: 20px;
-  background-color: lightgrey;
+  background-color: lightgray;
+  transition: background-color 0.3s;
 }
 
-.waffle-container .square.filled {
-  background-color: green;
+.waffle-chart-container {
+  position: relative;
+  display: inline-block;
 }
 
+.waffle-chart {
+  display: grid;
+  grid-template-columns: repeat(45, 10px); /* Adjust square size */
+  grid-gap: 1px;
+}
 
+.x-axis-labels {
+  display: flex;
+  justify-content: space-between;
+  width: 800px; /* Adjust width based on the total number of squares and their size */
+  margin-top: 2px;
+  float: inline-end;;
+}
+
+.x-axis-labels div {
+  width: 10px; /* Adjust label width if necessary */
+  text-align: center;
+  font-size: 12px;
+  color: #fff;
+}
+#y-axis-label {
+  writing-mode: horizontal-tb;
+  margin-right: 10px;
+  font-size: 16px;
+  font-weight: normal;
+  color: #fff;
+}   

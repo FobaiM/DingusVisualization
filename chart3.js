@@ -5,7 +5,7 @@ const vramChart = new Chart(vramCtx, {
         labels: ['Used', 'Unused'],
         datasets: [{
             label: 'VRAM Usage',
-            data: [480, 20],
+            data: [100, 10,10],
             backgroundColor: [
                 'rgba(0,0,0,255)',
                 'rgba(0,0,0,255)',

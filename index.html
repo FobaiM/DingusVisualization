@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/png" href="favicon.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://d3js.org/d3.v7.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-line-annotation"></script>
@@ -17,55 +18,72 @@
 <!--Chart elements for each chart-->
 <body>
     
-    <div class="container">
-
-        <div class="waffle-chart1">
-            <div class="waffle-title">CPU</div><br>
-            <div class="waffle-title">Total Cores</div>
-            <div class="waffle-container" id="cpu-chart">
-                <!-- Squares will be generated here -->
-            </div>
-
+    <div class="fluid-container">
+        
+                <div class="waffle-chart-container">
+                    <div id="y-axis-label">CPU Total Usage</div>
+                    <div class="chart2 waffle-chart" id="cpu-waffle-chart"></div>
+                    <div class="x-axis-labels" id="x-axis-labels"></div>
+                </div>
+        
+           
+                <br>
             
-        </div>
-        </div>
-
-        <div class="waffle-chart2">
-            <div class="waffle-title">RAM</div><br>
-            <div class="waffle-title">TB Total</div>
-            <div class="waffle-container" id="ram-chart">
-                <!-- Squares will be generated here -->
-            </div>
-        </div>
-
-
+            <div class="waffle-chart-container">
+                <div id="y-axis-label">RAM TB Total</div>
+                <div class="chart2 waffle-chart" id="ram-waffle-chart"></div>
+                <div class="x-axis-labels" id="ram-x-axis-labels"></div>
+            </div>    
+    
         <!-- <div class="chart" id="chart1">
             <canvas id="cpuChart" width="610" height="300"></canvas>
         </div>
         <div class="chart" id="chart2">
             <canvas id="ramChart" width="610" height="300"></canvas>
         </div> -->
-        <div class="chart" id="chart3">
-            <canvas id="vramChart" width="610" height="300"></canvas>
+
+        <div class="row">
+            <div class="col-6">
+                <div class="chart" id="chart3">
+                    <canvas id="vramChart"></canvas>
+                </div>
+            </div>
+            
+            <div class="col-6">                
+                <div class="chart" id="chart4">
+                    <canvas id="historyCpuChart" width="610" height="300"></canvas>
+                </div>
+            </div>
+
         </div>
-        <div class="chart" id="chart4">
-            <canvas id="historyCpuChart" width="610" height="300"></canvas>
+
+        <div class="row">
+
+            <div class="col-6">
+                <div class="chart" id="chart6">
+                    <canvas id="historyRamChart" width="610" height="300"></canvas>
+                </div>
+            </div>
+
+            <div class="col-6">
+                <div class="chart" id="chart7">
+                    <canvas id="jobsChart" width="610" height="300"></canvas>
+                </div>
+            </div>
+
         </div>
+
         <!-- <div class="chart" id="chart5">
             <canvas id="historyVramChart" width="610" height="300"></canvas>
         </div> -->
-        <div class="chart" id="chart6">
-            <canvas id="historyRamChart" width="610" height="300"></canvas>
-        </div>
-        <div class="chart" id="chart7">
-            <canvas id="jobsChart" width="610" height="300"></canvas>
-        </div>
     </div>
+
     <script src="./papaparse.min.js"></script>
     
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.8.0/dist/chart.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@3.8.0/dist/chart.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="chart1.js"></script>
     <script src="chart2.js"></script>
     <script src="chart3.js"></script>
@@ -75,5 +93,4 @@
     <script src="chart7.js"></script>
     <script src="script.js"></script>
 </body>
-
 </html>
